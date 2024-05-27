@@ -16,9 +16,9 @@ public class MainActivity extends AppCompatActivity {
     Button add, sub, mul, div;
     Button equal,AC,del;
     private boolean isOperatorSet = false;
-    private String currentInput = "";
-    private char lastOperator = '\0'; // 上一个操作符，初始设为无效字符
-    private double firstNumber, secondNumber;
+    private String mathNow = "";
+    private int precision = 2;
+    private BaseCalculator baseCalculator = new BaseCalculator();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -127,7 +127,7 @@ public class MainActivity extends AppCompatActivity {
         spot.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if (!currentInput.contains(".")) {
+                if (!mathNow.contains(".")) {
                     appendNumberToResult(".");
                 }
             }
@@ -136,104 +136,53 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 appendNumberToResult("+");
-
             }
         });
         sub.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
                 appendNumberToResult("-");
             }
         });
         mul.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
                 appendNumberToResult("×");
             }
         });
         div.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
                 appendNumberToResult("÷");
             }
         });
         equal.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                performCalculation();
+                String temp = "";
+                temp = result.getText().toString().substring(0, result.length() - result.length());
+                mathNow = result.getText().toString();
+                double resul = baseCalculator.cal(mathNow,precision); //调用科学计算器
+                String res = String.valueOf(resul);
+                if (resul == Double.MAX_VALUE)
+                    result.setText(temp + "ERROR");
+                else {
+                    result.setText(temp + res);
+                }
             }
         });
-    }
 
-    private void setOperator(char operator) {//运算符分隔数字
-        if (!isOperatorSet) {
-            firstNumber = Double.parseDouble(currentInput);
-        } else if (lastOperator == '-') {
-            secondNumber -= Double.parseDouble(currentInput);
-        } else {
-            secondNumber = Double.parseDouble(currentInput);
-        }
-        char lastOperator = this.lastOperator;
-        this.lastOperator = operator;
-        isOperatorSet = true;
-        switch (lastOperator) {
-            case '+':
-                secondNumber += firstNumber;
-                break;
-            case '-':
-                secondNumber -= firstNumber;
-                break;
-            case '*':
-                secondNumber *= firstNumber;
-                break;
-            case '/':
-                secondNumber /= firstNumber;
-                break;
-        }
     }
 
     private void appendNumberToResult(String number) {//输入数字和符号
         if(isOperatorSet==true){
-            result.setText(null);
-            result.setText(result.getText()+number);
+            mathNow += "";
             isOperatorSet=false;
-        }else
-            result.setText(result.getText()+number);
+        }else{
+            mathNow += number;
+        }result.setText(mathNow);
     }
-    
-    private void performCalculation() {//计算
-        if (!isOperatorSet) {
-            firstNumber = Double.parseDouble(currentInput);
-        } else {
-            secondNumber = Double.parseDouble(currentInput);
-        }
-        switch (lastOperator) {
-            case '+':
-                secondNumber += firstNumber;
-                break;
-            case '-':
-                secondNumber -= firstNumber;
-                break;
-            case '*':
-                secondNumber *= firstNumber;
-                break;
-            case '/':
-                if (firstNumber != 0) {
-                    secondNumber /= firstNumber;
-                } else {
-                    result.setText("Error: Division by zero");
-                    return;
-                }
-                break;
-        }
-        currentInput = Double.toString(secondNumber);
-        result.setText(currentInput);
-        firstNumber = secondNumber;
-        isOperatorSet = false;
-    }
+
 
 }
 
