@@ -69,7 +69,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="5dp"
                     android:background="@drawable/new_button"
-                    android:text="平方米->英亩"
+                    android:text="公顷->英亩"
                     android:textSize="17dp" />
 
                 <Button
@@ -78,7 +78,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="5dp"
                     android:background="@drawable/new_button"
-                    android:text="厘米->英尺"
+                    android:text="米->英尺"
                     android:textSize="17dp" />
 
                 <Button

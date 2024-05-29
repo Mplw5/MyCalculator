@@ -137,25 +137,25 @@ public class MainActivity extends AppCompatActivity {
         add.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                appendNumberToResult("+");
+                appendNumberToResult(" + ");
             }
         });
         sub.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                appendNumberToResult("-");
+                appendNumberToResult(" - ");
             }
         });
         mul.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                appendNumberToResult("×");
+                appendNumberToResult(" × ");
             }
         });
         div.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                appendNumberToResult("÷");
+                appendNumberToResult(" ÷ ");
             }
         });
         equal.setOnClickListener(new View.OnClickListener() {
@@ -180,7 +180,7 @@ public class MainActivity extends AppCompatActivity {
         startActivityForResult(intent,3);
     }
 
-    private void appendNumberToResult(String number) {//输入数字和符号
+    private void appendNumberToResult(String number) {
         if (isOperatorSet) {
             mathNow = number;
             isOperatorSet = false;
