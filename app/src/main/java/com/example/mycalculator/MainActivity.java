@@ -2,7 +2,9 @@ package com.example.mycalculator;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
 import android.widget.Button;
@@ -12,13 +14,14 @@ import android.widget.TextView;
 public class MainActivity extends AppCompatActivity {
 
     TextView result;
-    Button zero, one, two, three, four, five, six, seven, eight, nine, spot;
+    Button zero, one, two, three, four, five, six, seven, eight, nine, spot,cvt;
     Button add, sub, mul, div;
     Button equal,AC,del;
     private boolean isOperatorSet = false;
     private String mathNow = "";
     private int precision = 2;
     private BaseCalculator baseCalculator = new BaseCalculator();
+    private static final String TAG = "Calculator";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,6 +46,7 @@ public class MainActivity extends AppCompatActivity {
         equal = findViewById(R.id.equal);
         AC = findViewById(R.id.AC);
         del = findViewById(R.id.Del);
+        cvt = findViewById(R.id.Cvt);
         AC.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -172,6 +176,10 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+    }
+    public void Cvt(View v) {
+        Intent intent = new Intent(this, MainActivity2.class);
+        startActivityForResult(intent,3);
     }
 
     private void appendNumberToResult(String number) {//输入数字和符号
