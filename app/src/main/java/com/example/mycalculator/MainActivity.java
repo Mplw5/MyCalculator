@@ -50,20 +50,18 @@ public class MainActivity extends AppCompatActivity {
         AC.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                String temp = "";
-                temp = result.getText().toString().substring(0, result.length() - result.length());
-                result.setText(temp + "");
+                mathNow = "";
+                result.setText("");
+                isOperatorSet = false;
             }
         });
         del.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                try {
-                    String temp = "";
-                    temp = result.getText().toString().substring(0, result.length() - 1);
-                    result.setText(temp + "");
-                }catch(RuntimeException a){
-                    result.setText("Error");
+                if (!mathNow.isEmpty()) {
+                    String temp = mathNow.substring(0, mathNow.length() - 1);
+                    mathNow = temp;
+                    result.setText(mathNow);
                 }
             }
         });
@@ -183,12 +181,13 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void appendNumberToResult(String number) {//输入数字和符号
-        if(isOperatorSet==true){
-            mathNow += "";
-            isOperatorSet=false;
-        }else{
+        if (isOperatorSet) {
+            mathNow = number;
+            isOperatorSet = false;
+        } else {
             mathNow += number;
-        }result.setText(mathNow);
+        }
+        result.setText(mathNow); // 更新显示的内容
     }
 
 
