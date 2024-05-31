@@ -45,11 +45,11 @@ class BaseCalculator {
                 return a * b;
             case '/':
                 if (b == 0) {
-                    throw new ArithmeticException("Cannot divide by zero");
+                    return Double.NaN;
                 }
                 return a / b;
             default:
-                throw new IllegalArgumentException("Invalid operator: " + oper);
+                return Double.NaN;
         }
     }
 
@@ -63,7 +63,7 @@ class BaseCalculator {
     }
 
     private double calSubmath(String math) {
-        // 将表达式按空格分割（假设表达式元素之间由空格分隔）
+        // 将表达式按空格分割
         String[] elements = math.split(" ");
 
         Stack<Double> numbers = new Stack<>();
@@ -96,7 +96,6 @@ class BaseCalculator {
         while (!operators.isEmpty()) {
             numbers.push(operate(numbers.pop(), operators.pop(), numbers.pop()));
         }
-
         return numbers.pop();
     }
 

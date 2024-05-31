@@ -41,6 +41,7 @@
                 android:layout_marginRight="90dp"
                 android:layout_marginLeft="10dp"
                 android:textSize="21dp"
+                android:onClick="Cvt"
                 android:background="@drawable/new_button"
                 android:text="Cvt" />
 
