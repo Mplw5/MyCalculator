@@ -26,7 +26,7 @@
             android:layout_height="120dp"
             android:textSize="50dp"
             android:padding="15dp"
-            android:text="" />
+            android:text="TextView" />
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -37,13 +37,12 @@
                 android:id="@+id/Cvt"
                 android:layout_width="80dp"
                 android:layout_height="60dp"
-                android:layout_marginLeft="10dp"
                 android:layout_marginTop="30dp"
                 android:layout_marginRight="90dp"
+                android:layout_marginLeft="10dp"
+                android:textSize="21dp"
                 android:background="@drawable/new_button"
-                android:text="Cvt"
-                android:onClick="Cvt"
-                android:textSize="21dp" />
+                android:text="Cvt" />
 
             <Button
                 android:id="@+id/AC"
@@ -95,12 +94,12 @@
 
                 <Button
                     android:id="@+id/btn1"
+                    android:layout_marginTop="15dp"
                     android:layout_width="match_parent"
                     android:layout_height="78.75dp"
-                    android:layout_marginTop="15dp"
+                    android:textSize="30dp"
                     android:background="@drawable/new_button"
-                    android:text="1"
-                    android:textSize="30dp" />
+                    android:text="1" />
 
                 <Button
                     android:id="@+id/btn0"
