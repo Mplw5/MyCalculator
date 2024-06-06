@@ -5,6 +5,14 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/img_1" />
+
     <LinearLayout
         android:id="@+id/linearLayout2"
         android:layout_width="343dp"
@@ -23,35 +31,35 @@
             android:id="@+id/textView"
             android:layout_width="match_parent"
             android:layout_height="48dp"
-            android:textSize="23dp"
+            android:text="请输入："
             android:textColor="@color/black"
-            android:text="请输入：" />
+            android:textSize="23dp" />
 
         <EditText
             android:id="@+id/num"
             android:layout_width="match_parent"
             android:layout_height="60dp"
             android:ems="10"
-            android:textSize="23dp"
+            android:hint="请输入数据"
             android:inputType="text"
-            android:hint="请输入数据" />
+            android:textSize="23dp" />
 
         <TextView
             android:id="@+id/textView2"
             android:layout_width="match_parent"
             android:layout_height="51dp"
             android:text="转换结果："
-            android:textSize="23dp"
-            android:textColor="@color/black"/>
+            android:textColor="@color/black"
+            android:textSize="23dp" />
 
         <EditText
             android:id="@+id/result"
             android:layout_width="match_parent"
             android:layout_height="66dp"
             android:ems="10"
+            android:hint="结果"
             android:inputType="text"
-            android:textSize="23dp"
-            android:hint="结果"/>
+            android:textSize="23dp" />
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -183,18 +191,18 @@
                     android:id="@+id/btn5"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
                     android:background="@drawable/new_button"
                     android:text="5"
-                    android:layout_marginTop="10dp"
                     android:textSize="21dp" />
 
                 <Button
                     android:id="@+id/btn2"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
                     android:background="@drawable/new_button"
                     android:text="2"
-                    android:layout_marginTop="10dp"
                     android:textSize="21dp" />
             </LinearLayout>
 
@@ -216,18 +224,18 @@
                     android:id="@+id/btn6"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
                     android:background="@drawable/new_button"
                     android:text="6"
-                    android:layout_marginTop="10dp"
                     android:textSize="21dp" />
 
                 <Button
                     android:id="@+id/btn3"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
                     android:background="@drawable/new_button"
                     android:text="3"
-                    android:layout_marginTop="10dp"
                     android:textSize="21dp" />
             </LinearLayout>
 
@@ -249,18 +257,18 @@
                     android:id="@+id/spot"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
                     android:background="@drawable/new_button"
                     android:text="."
-                    android:layout_marginTop="10dp"
                     android:textSize="21dp" />
 
                 <Button
                     android:id="@+id/btn0"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
                     android:background="@drawable/new_button"
                     android:text="0"
-                    android:layout_marginTop="10dp"
                     android:textSize="21dp" />
             </LinearLayout>
         </LinearLayout>
@@ -269,9 +277,10 @@
             android:id="@+id/button9"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="返回"
+            android:background="@drawable/new_button"
             android:onClick="back"
-            android:textSize="21dp"
-            android:background="@drawable/new_button"/>
+            android:text="返回"
+            android:textSize="21dp" />
     </LinearLayout>
+
 </androidx.constraintlayout.widget.ConstraintLayout>
