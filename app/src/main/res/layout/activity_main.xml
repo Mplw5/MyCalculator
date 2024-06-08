@@ -7,15 +7,16 @@
     tools:context=".MainActivity">
 
     <ImageView
-        android:id="@+id/imageView3"
+        android:id="@+id/imageView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/img_1" />
+        android:src="@drawable/img_1"
+        />
 
     <LinearLayout
-        android:id="@+id/linearLayout"
+        android:id="@+id/parentLayout"
         android:layout_width="360dp"
         android:layout_height="630dp"
         android:layout_marginStart="1dp"
