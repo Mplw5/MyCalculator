@@ -2,7 +2,7 @@
 <resources>
     <style name="style2" parent="Widget.AppCompat.Button">
         <item name="android:background">@drawable/new_button2</item>
-        <item name="android:textColor">@color/white</item>
+        <item name="android:textColor">@color/red</item>
     </style>
     <style name="style1" parent="Widget.AppCompat.Button">
         <item name="android:background">@drawable/new_button</item>

@@ -22,21 +22,37 @@ public class MainActivity extends AppCompatActivity {
     TextView result;
     Button zero, one, two, three, four, five, six, seven, eight, nine, spot,cvt;
     Button add, sub, mul, div;
-    Button equal,AC,del,button_style,exchangeButton,text_color;
+    Button equal,AC,del,back_ground,exchangeButton,text_color;
     ImageView background;
     private boolean isOperatorSet = false;
     private String mathNow = "";
     private int precision = 2;
     private BaseCalculator baseCalculator = new BaseCalculator();
     private static final String TAG = "Calculator";
-    private int currentStyle = 1; // 1 表示 buttonstyle1，2 表示 buttonstyle2
-    private List<Button> allButtons;
+    private int currentStyle = 1;
+    private List<Button> allButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
-        background = findViewById(R.id.imageView);
+//        setContentView(R.layout.activity_change);
+
+        if(getResources().getConfiguration().orientation == Configuration.ORIENTATION_LANDSCAPE){
+            setContentView(R.layout.activity_change);
+            text_color = findViewById(R.id.text_color);
+
+            text_color.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    currentStyle = (currentStyle == 1) ? 2 : 1;
+                    toggleButtonStyle();
+                }
+            });
+        } else{
+            setContentView(R.layout.activity_main);
+        }
+
+        background = findViewById(R.id.imageView_1);
         result = (TextView) findViewById(R.id.result);
         zero = findViewById(R.id.btn0);
         one = findViewById(R.id.btn1);
@@ -57,9 +73,9 @@ public class MainActivity extends AppCompatActivity {
         AC = findViewById(R.id.AC);
         del = findViewById(R.id.Del);
         cvt = findViewById(R.id.Cvt);
-        button_style= findViewById(R.id.button_style);
+        back_ground= findViewById(R.id.back_ground);
         text_color= findViewById(R.id.text_color);
-        exchangeButton = findViewById(R.id.exchange);
+
 
         List<Button> allButtons = new ArrayList<>();
         allButtons.add(findViewById(R.id.btn0));
@@ -76,16 +92,16 @@ public class MainActivity extends AppCompatActivity {
         allButtons.add(findViewById(R.id.subtract));
         allButtons.add(findViewById(R.id.multiply));
         allButtons.add(findViewById(R.id.divide));
+        allButtons.add(findViewById(R.id.add));
         allButtons.add(findViewById(R.id.equal));
         allButtons.add(findViewById(R.id.AC));
         allButtons.add(findViewById(R.id.Del));
         allButtons.add(findViewById(R.id.Cvt));
         allButtons.add(findViewById(R.id.text_color));
-        allButtons.add(findViewById(R.id.button_style));
+        allButtons.add(findViewById(R.id.back_ground));
         allButtons.add(findViewById(R.id.exchange));
-        this.allButtons = allButtons;
+        this.allButton = allButtons;
 
-        updateBackgroundImage();
 
         AC.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -213,16 +229,6 @@ public class MainActivity extends AppCompatActivity {
                 }
             }
         });
-        exchangeButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                // 切换样式
-                currentStyle = (currentStyle == 1) ? 2 : 1;
-                toggleButtonStyle();
-                updateBackgroundImage(); // 更新背景图片
-            }
-        });
-
 
     }
 
@@ -233,37 +239,19 @@ public class MainActivity extends AppCompatActivity {
         } else {
             styleResId = R.style.style2;
         }
-        for (Button button : allButtons) {
+        for (Button button : allButton) {
             button.setTextAppearance(this, styleResId);
         }
     }
 
-    private void updateBackgroundImage() {
-        int imgResId;
-        if (getResources().getConfiguration().orientation == Configuration.ORIENTATION_PORTRAIT) {
-            if (currentStyle == 1) {
-                imgResId = R.drawable.img_1;
-            } else {
-                imgResId = R.drawable.img;
-            }
-        } else {
-            if (currentStyle == 1) {
-                imgResId = R.drawable.img_2;
-            } else {
-                imgResId = R.drawable.img2;
-            }
-        }
-        background.setImageResource(imgResId);
-    }
-    @Override
-    public void onConfigurationChanged(Configuration newConfig) {
-        super.onConfigurationChanged(newConfig);
-        updateBackgroundImage();
-    }
 
 
     public void Cvt(View v) {
         Intent intent = new Intent(this, MainActivity2.class);
+        startActivityForResult(intent,3);
+    }
+    public void back_ground(View v) {
+        Intent intent = new Intent(this, Background.class);
         startActivityForResult(intent,3);
     }
 
@@ -279,10 +267,5 @@ public class MainActivity extends AppCompatActivity {
 
 
 }
-
-
-
-
-
 
 

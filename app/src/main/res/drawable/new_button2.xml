@@ -2,9 +2,16 @@
 <shape xmlns:tools="http://schemas.android.com/tools"
     xmlns:android="http://schemas.android.com/apk/res/android"
     tools:ignore="ExtraText">
-    <stroke
-        android:width="2dip"
-        android:color="#F7FAFAFA" />
+    <gradient
+        android:type="linear"
+        android:startColor="#F6A8C3"
+        android:endColor="#92BAFF"
+        android:angle="90"
+    />
     <corners
         android:radius="500dip"/>
+    <padding android:left="8dp"
+        android:top="8dp"
+        android:right="8dp"
+        android:bottom="8dp" />  <!-- 按钮内边距 -->
 </shape>

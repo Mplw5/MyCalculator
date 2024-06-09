@@ -6,7 +6,7 @@
     android:layout_height="match_parent">
 
     <ImageView
-        android:id="@+id/imageView"
+        android:id="@+id/imageView_3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:layout_constraintStart_toStartOf="parent"
@@ -76,7 +76,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="5dp"
-                    android:background="@drawable/new_button"
+                    style="@style/style1"
                     android:text="公顷->英亩"
                     android:textSize="17dp" />
 
@@ -85,7 +85,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="5dp"
-                    android:background="@drawable/new_button"
+                    style="@style/style1"
                     android:text="米->英尺"
                     android:textSize="17dp" />
 
@@ -94,7 +94,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="5dp"
-                    android:background="@drawable/new_button"
+                    style="@style/style1"
                     android:text="立方米 ->立方英尺"
                     android:textSize="16dp" />
 
@@ -110,7 +110,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="5dp"
-                    android:background="@drawable/new_button"
+                    style="@style/style1"
                     android:text="摄氏度->华氏度"
                     android:textSize="17dp" />
 
@@ -119,7 +119,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="5dp"
-                    android:background="@drawable/new_button"
+                    style="@style/style1"
                     android:text="千克->磅"
                     android:textSize="17dp" />
 
@@ -128,7 +128,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="5dp"
-                    android:background="@drawable/new_button"
+                    style="@style/style1"
                     android:text="米每秒->公里每小时"
                     android:textSize="16dp" />
 
@@ -150,7 +150,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="5dp"
-                    android:background="@drawable/new_button"
+                    style="@style/style1"
                     android:text="7"
                     android:textSize="21dp" />
 
@@ -159,7 +159,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="10dp"
-                    android:background="@drawable/new_button"
+                    style="@style/style1"
                     android:text="4"
                     android:textSize="21dp" />
 
@@ -168,7 +168,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="10dp"
-                    android:background="@drawable/new_button"
+                    style="@style/style1"
                     android:text="1"
                     android:textSize="21dp" />
             </LinearLayout>
@@ -183,7 +183,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="5dp"
-                    android:background="@drawable/new_button"
+                    style="@style/style1"
                     android:text="8"
                     android:textSize="21dp" />
 
@@ -192,7 +192,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="10dp"
-                    android:background="@drawable/new_button"
+                    style="@style/style1"
                     android:text="5"
                     android:textSize="21dp" />
 
@@ -201,7 +201,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="10dp"
-                    android:background="@drawable/new_button"
+                    style="@style/style1"
                     android:text="2"
                     android:textSize="21dp" />
             </LinearLayout>
@@ -216,7 +216,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="5dp"
-                    android:background="@drawable/new_button"
+                    style="@style/style1"
                     android:text="9"
                     android:textSize="21dp" />
 
@@ -225,7 +225,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="10dp"
-                    android:background="@drawable/new_button"
+                    style="@style/style1"
                     android:text="6"
                     android:textSize="21dp" />
 
@@ -234,7 +234,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="10dp"
-                    android:background="@drawable/new_button"
+                    style="@style/style1"
                     android:text="3"
                     android:textSize="21dp" />
             </LinearLayout>
@@ -249,7 +249,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="5dp"
-                    android:background="@drawable/new_button"
+                    style="@style/style1"
                     android:text="C"
                     android:textSize="21dp" />
 
@@ -258,7 +258,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="10dp"
-                    android:background="@drawable/new_button"
+                    style="@style/style1"
                     android:text="."
                     android:textSize="21dp" />
 
@@ -267,7 +267,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="10dp"
-                    android:background="@drawable/new_button"
+                    style="@style/style1"
                     android:text="0"
                     android:textSize="21dp" />
             </LinearLayout>
@@ -277,7 +277,7 @@
             android:id="@+id/button9"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@drawable/new_button"
+            style="@style/style1"
             android:onClick="back"
             android:text="返回"
             android:textSize="21dp" />

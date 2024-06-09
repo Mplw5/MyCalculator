@@ -1,6 +1,7 @@
 <resources>
     <string name="app_name">My Calculator</string>
-
-    <string name="background1">这是可选的背景1</string>
-
+    <string name="background1">白日</string>
+    <string name="background2">黑夜</string>
+    <string name="background3">卡通</string>
+    <string name="background4">涂鸦</string>
 </resources>
