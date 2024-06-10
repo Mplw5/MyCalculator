@@ -5,11 +5,14 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
+import android.widget.ImageView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 public class Background extends AppCompatActivity {
-    ImageButton img1,img2,img3,img4,back;
+    private ImageButton img1,img2,img3,img4,back;
+    private ImageView someImageView;
+    private SharedViewModel sharedViewModel;
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

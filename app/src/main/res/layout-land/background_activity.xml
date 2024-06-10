@@ -9,14 +9,13 @@
         android:id="@+id/imageView2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/img_2" />
+        app:srcCompat="@drawable/img_2"
+        tools:ignore="MissingConstraints" />
 
     <LinearLayout
         android:id="@+id/linearLayout3"
-        android:layout_width="653dp"
-        android:layout_height="317dp"
+        android:layout_width="661dp"
+        android:layout_height="358dp"
         android:layout_marginStart="1dp"
         android:layout_marginTop="1dp"
         android:layout_marginEnd="1dp"
@@ -28,20 +27,78 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <TextView
-            android:id="@+id/textView5"
+            android:id="@+id/textView4"
             android:layout_width="match_parent"
-            android:layout_height="231dp"
-            android:text="请竖屏使用"
-            android:textSize="100dp" />
+            android:layout_height="63dp"
+            android:gravity="center"
+            android:text="请选择你喜欢的背景"
+            android:textColor="@color/black"
+            android:textSize="35dp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="202dp"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_width="325dp"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <ImageButton
+                    android:id="@+id/imageButton"
+                    android:layout_width="match_parent"
+                    android:layout_height="100dp"
+                    android:contentDescription="@string/background1"
+                    android:scaleType="centerCrop"
+                    app:srcCompat="@drawable/img_1" />
+
+                <ImageButton
+                    android:id="@+id/imageButton2"
+                    android:layout_width="match_parent"
+                    android:layout_height="72dp"
+                    android:contentDescription="@string/background2"
+                    android:scaleType="centerCrop"
+                    app:srcCompat="@drawable/img" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                tools:layout_editor_absoluteX="-112dp"
+                tools:layout_editor_absoluteY="157dp">
+
+                <ImageButton
+                    android:id="@+id/imageButton3"
+                    android:layout_width="match_parent"
+                    android:layout_height="98dp"
+                    android:contentDescription="@string/background3"
+                    android:scaleType="centerCrop"
+                    app:srcCompat="@drawable/img_3" />
+
+                <ImageButton
+                    android:id="@+id/imageButton4"
+                    android:layout_width="match_parent"
+                    android:layout_height="70dp"
+                    android:contentDescription="@string/background4"
+                    android:scaleType="centerCrop"
+                    app:srcCompat="@drawable/img_4" />
+            </LinearLayout>
+
+        </LinearLayout>
+
         <Button
             android:id="@+id/back"
-            android:layout_marginRight="50dp"
-            android:layout_marginLeft="50dp"
             style="@style/style1"
-            android:onClick="back"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginLeft="50dp"
+            android:layout_marginRight="50dp"
+            android:onClick="back"
             android:text="返回" />
+
     </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

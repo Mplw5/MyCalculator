@@ -3,6 +3,7 @@ package com.example.mycalculator;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.content.res.Configuration;
 import android.os.Bundle;
 import android.util.Log;
@@ -31,21 +32,29 @@ public class MainActivity extends AppCompatActivity {
     private static final String TAG = "Calculator";
     private int currentStyle = 1;
     private List<Button> allButton;
-
+    private boolean isStyle1Active = true;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-//        setContentView(R.layout.activity_change);
+
 
         if(getResources().getConfiguration().orientation == Configuration.ORIENTATION_LANDSCAPE){
             setContentView(R.layout.activity_change);
-            text_color = findViewById(R.id.text_color);
 
+            exchangeButton = findViewById(R.id.exchange);
+            exchangeButton.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    toggleButtonStyle();
+                }
+            });
+
+            text_color = findViewById(R.id.text_color);
             text_color.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
                     currentStyle = (currentStyle == 1) ? 2 : 1;
-                    toggleButtonStyle();
+                    toggleButtonStyle2();
                 }
             });
         } else{
@@ -230,9 +239,24 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+
     }
 
+
     private void toggleButtonStyle() {
+        int textStyleResId = currentStyle == 1 ? R.style.style1 : R.style.style2;
+        int backgroundResId = currentStyle == 1 ? R.drawable.new_button1 : R.drawable.new_button2;
+
+        for (Button button : allButton) {
+            button.setTextAppearance(this, textStyleResId);
+            button.setBackgroundResource(backgroundResId);
+        }
+
+        currentStyle = currentStyle == 1 ? 2 : 1; // Toggle the style state
+        isStyle1Active = !isStyle1Active; // Update the style state flag
+    }
+
+    private void toggleButtonStyle2() {
         int styleResId;
         if (currentStyle == 1) {
             styleResId = R.style.style1;
@@ -243,9 +267,6 @@ public class MainActivity extends AppCompatActivity {
             button.setTextAppearance(this, styleResId);
         }
     }
-
-
-
     public void Cvt(View v) {
         Intent intent = new Intent(this, MainActivity2.class);
         startActivityForResult(intent,3);
