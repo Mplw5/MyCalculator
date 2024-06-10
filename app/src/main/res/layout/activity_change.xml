@@ -7,7 +7,7 @@
     tools:context=".MainActivity">
 
     <ImageView
-        android:id="@+id/imageView_2"
+        android:id="@+id/imageView_1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:layout_constraintStart_toStartOf="parent"
@@ -33,6 +33,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:padding="15dp"
+            android:textColor="@android:color/darker_gray"
             android:gravity="center_vertical|right"
             android:text="TextView"
             android:textSize="27dp" />

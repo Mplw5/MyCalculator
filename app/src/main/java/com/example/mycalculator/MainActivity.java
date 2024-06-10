@@ -85,7 +85,6 @@ public class MainActivity extends AppCompatActivity {
         back_ground= findViewById(R.id.back_ground);
         text_color= findViewById(R.id.text_color);
 
-
         List<Button> allButtons = new ArrayList<>();
         allButtons.add(findViewById(R.id.btn0));
         allButtons.add(findViewById(R.id.btn1));
@@ -244,16 +243,28 @@ public class MainActivity extends AppCompatActivity {
 
 
     private void toggleButtonStyle() {
-        int textStyleResId = currentStyle == 1 ? R.style.style1 : R.style.style2;
-        int backgroundResId = currentStyle == 1 ? R.drawable.new_button1 : R.drawable.new_button2;
+        currentStyle = currentStyle == 1 ? 2 : 1;
+        isStyle1Active = !isStyle1Active;
 
+        int imgResId;
+        if (currentStyle == 1) {
+            imgResId = R.drawable.img_2;
+        } else {
+            imgResId = R.drawable.img2;
+        }
+        background.setImageResource(imgResId);
+
+        SharedPreferences prefs = getSharedPreferences("AppPreferences", MODE_PRIVATE);
+        SharedPreferences.Editor editor = prefs.edit();
+        editor.putInt("currentStyle", currentStyle);
+        editor.apply();
+
+        // 应用按钮样式
+        int textStyleResId = currentStyle == 1 ? R.style.style1 : R.style.style2;
         for (Button button : allButton) {
             button.setTextAppearance(this, textStyleResId);
-            button.setBackgroundResource(backgroundResId);
+            button.setBackgroundResource(currentStyle == 1 ? R.drawable.new_button1 : R.drawable.new_button2);
         }
-
-        currentStyle = currentStyle == 1 ? 2 : 1; // Toggle the style state
-        isStyle1Active = !isStyle1Active; // Update the style state flag
     }
 
     private void toggleButtonStyle2() {
