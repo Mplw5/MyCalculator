@@ -104,18 +104,6 @@
                     android:textSize="20dp" />
 
                 <Button
-                    android:id="@+id/back_ground"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="30dp"
-                    android:layout_marginTop="10dp"
-                    android:layout_marginRight="30dp"
-                    style="@style/style1"
-                    android:onClick="back_ground"
-                    android:text="改变背景样式"
-                    android:textSize="20dp" />
-
-                <Button
                     android:id="@+id/text_color"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -124,6 +112,18 @@
                     android:layout_marginRight="30dp"
                     style="@style/style1"
                     android:text="改变字体颜色"
+                    android:textSize="20dp" />
+
+                <Button
+                    android:id="@+id/back_ground"
+                    style="@style/style1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="30dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginRight="30dp"
+                    android:onClick="back_ground"
+                    android:text="作者的话"
                     android:textSize="20dp" />
             </LinearLayout>
 

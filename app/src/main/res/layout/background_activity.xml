@@ -26,64 +26,28 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
-        <TextView
-            android:id="@+id/textView4"
-            android:layout_width="match_parent"
-            android:layout_height="63dp"
-            android:textSize="35dp"
+
+        <com.example.mycalculator.Text
+            android:id="@+id/tv1"
+            android:layout_width="276dp"
+            android:layout_height="96dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="80dp"
+            android:clickable="true"
+            android:ellipsize="marquee"
+            android:focusable="true"
+            android:focusableInTouchMode="true"
+            android:gravity="center_horizontal"
+            android:marqueeRepeatLimit="marquee_forever"
+            android:shadowColor="@color/red"
+            android:shadowDx="10"
+            android:shadowDy="10"
+            android:shadowRadius="3.0"
+            android:singleLine="true"
+            android:text="感谢您使用本计算器！"
             android:textColor="@color/black"
-            android:gravity="center"
-            android:text="请选择你喜欢的背景" />
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="487dp"
-            android:orientation="horizontal">
-
-            <LinearLayout
-                android:layout_width="178dp"
-                android:layout_height="473dp"
-                android:orientation="vertical">
-
-                <ImageButton
-                    android:id="@+id/imageButton"
-                    android:layout_width="match_parent"
-                    android:layout_height="225dp"
-                    android:contentDescription="@string/background1"
-                    android:scaleType="centerCrop"
-                    app:srcCompat="@drawable/img_1" />
-
-                <ImageButton
-                    android:id="@+id/imageButton2"
-                    android:layout_width="match_parent"
-                    android:layout_height="231dp"
-                    android:contentDescription="@string/background2"
-                    android:scaleType="centerCrop"
-                    app:srcCompat="@drawable/img" />
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="473dp"
-                android:orientation="vertical">
-
-                <ImageButton
-                    android:id="@+id/imageButton3"
-                    android:layout_width="match_parent"
-                    android:layout_height="224dp"
-                    android:contentDescription="@string/background3"
-                    android:scaleType="centerCrop"
-                    app:srcCompat="@drawable/img_3" />
-
-                <ImageButton
-                    android:id="@+id/imageButton4"
-                    android:layout_width="match_parent"
-                    android:layout_height="232dp"
-                    android:contentDescription="@string/background4"
-                    android:scaleType="centerCrop"
-                    app:srcCompat="@drawable/img_4" />
-            </LinearLayout>
-        </LinearLayout>
+            android:textSize="40sp"
+            android:textStyle="italic" />
 
         <Button
             android:id="@+id/back"
@@ -96,5 +60,15 @@
             android:text="返回" />
 
     </LinearLayout>
+
+    <com.example.mycalculator.FireworksView
+        android:id="@+id/fireworksView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="20dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

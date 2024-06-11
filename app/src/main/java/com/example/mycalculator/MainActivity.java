@@ -2,7 +2,10 @@ package com.example.mycalculator;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.BroadcastReceiver;
+import android.content.Context;
 import android.content.Intent;
+import android.content.IntentFilter;
 import android.content.SharedPreferences;
 import android.content.res.Configuration;
 import android.os.Bundle;
@@ -24,7 +27,8 @@ public class MainActivity extends AppCompatActivity {
     Button zero, one, two, three, four, five, six, seven, eight, nine, spot,cvt;
     Button add, sub, mul, div;
     Button equal,AC,del,back_ground,exchangeButton,text_color;
-    ImageView background;
+    ImageView imageView1;
+
     private boolean isOperatorSet = false;
     private String mathNow = "";
     private int precision = 2;
@@ -61,7 +65,7 @@ public class MainActivity extends AppCompatActivity {
             setContentView(R.layout.activity_main);
         }
 
-        background = findViewById(R.id.imageView_1);
+        imageView1 = findViewById(R.id.imageView_1);
         result = (TextView) findViewById(R.id.result);
         zero = findViewById(R.id.btn0);
         one = findViewById(R.id.btn1);
@@ -238,9 +242,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-
     }
-
 
     private void toggleButtonStyle() {
         currentStyle = currentStyle == 1 ? 2 : 1;
@@ -252,7 +254,7 @@ public class MainActivity extends AppCompatActivity {
         } else {
             imgResId = R.drawable.img2;
         }
-        background.setImageResource(imgResId);
+        imageView1.setImageResource(imgResId);
 
         SharedPreferences prefs = getSharedPreferences("AppPreferences", MODE_PRIVATE);
         SharedPreferences.Editor editor = prefs.edit();

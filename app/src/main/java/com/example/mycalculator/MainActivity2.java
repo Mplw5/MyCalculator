@@ -1,11 +1,15 @@
 package com.example.mycalculator;
 
+import android.content.BroadcastReceiver;
+import android.content.Context;
 import android.content.Intent;
+import android.content.IntentFilter;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -17,10 +21,14 @@ public class MainActivity2 extends AppCompatActivity {
     private boolean isOperatorSet = false;
     private String mathNow = "";
     TextView result,num;
+    ImageView imageView3,imageView5;
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main2);
+
         Intent intent = getIntent();
+        imageView3 = findViewById(R.id.imageView_3);
+        imageView5 = findViewById(R.id.imageView_5);
         result = (TextView) findViewById(R.id.result);
         num = (TextView)findViewById(R.id.num);
         zero = findViewById(R.id.btn0);
@@ -191,6 +199,7 @@ public class MainActivity2 extends AppCompatActivity {
             }
         });
     }
+
     private void appendNumberToResult(String number) {
         if (isOperatorSet) {
             mathNow = number;
